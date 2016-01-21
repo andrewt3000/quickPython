@@ -48,9 +48,13 @@ while a <= 3:
     print a
     a = a + 1 #no increment operator
 
-#for loop
+#for loop. prints 1 2 3
 for i in [1, 2, 3]:
     print i
+
+print 'prints range: 0, 1, 2'
+for i in range(0,3):
+	print i 
 
 # ** raises to a power. prints 9
 x = 3 ** 2
