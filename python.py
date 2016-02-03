@@ -7,6 +7,29 @@
 # -----------------------------------------------------------------------------
 
 
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# >>>> TODO:
+# >>>> differences between Python 2/3, print function, division, no xrange
+# >>>> returning iterators instead of lists (map, filter, range... etc)
+
+# >>>> Unpacking using *, for function parameters, variable assignments, etc...
+
+# >>>> Re-organize the sections?
+
+# >>>> Maybe create a separate section for slicing since you can slice
+# >>>> strings, lists, tuples? should it be repeated it each of those sections?
+
+# >>>> add lambda example(s) in Functions section?
+
+# >>>> remove all the comments from Strings section about methods?
+# >>>> most of the examples seem pretty self-explanatory...
+
+# >>>> try to shorten or remove unnecessary comments
+
+# >>>> is regex too much??
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
 # -----------------------------------------------------------------------------
 # -- Comments
 # -----------------------------------------------------------------------------
@@ -71,7 +94,7 @@ else:
 # while loop
 while c <= 3:
     print c
-    c += 1
+    c += 1  # no ++ increment operator
 
 # for loop. prints 1 2 3
 for e in [1, 2, 3]:
@@ -362,6 +385,10 @@ assert copy_of_set == set([])
 # return a new set with elements that are not in the other set(s)
 assert my_set.difference(my_set_2) == {1, 2, 3}
 assert my_set_2.difference(my_set) == {6, 7}
+
+
+# >>>> intersection, union, etc...
+
 
 # remove a value from the set
 my_set.remove(1)
