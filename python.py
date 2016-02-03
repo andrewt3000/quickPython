@@ -7,29 +7,6 @@
 # -----------------------------------------------------------------------------
 
 
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# >>>> TODO:
-# >>>> differences between Python 2/3, print function, division, no xrange
-# >>>> returning iterators instead of lists (map, filter, range... etc)
-
-# >>>> Unpacking using *, for function parameters, variable assignments, etc...
-
-# >>>> Re-organize the sections?
-
-# >>>> Maybe create a separate section for slicing since you can slice
-# >>>> strings, lists, tuples? should it be repeated it each of those sections?
-
-# >>>> add lambda example(s) in Functions section?
-
-# >>>> remove all the comments from Strings section about methods?
-# >>>> most of the examples seem pretty self-explanatory...
-
-# >>>> try to shorten or remove unnecessary comments
-
-# >>>> is regex too much??
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
 # -----------------------------------------------------------------------------
 # -- Comments
 # -----------------------------------------------------------------------------
@@ -64,11 +41,10 @@ from UserDict import UserDict
 counter = 100
 
 # A floating point
-worth = 1000.0
-
+worth = 999.56
 
 # Python is strongly typed. Variables have to be cast after being set.
-assert 'I am worth ${}'.format(worth) == 'I am worth $1000.0'
+assert 'I am worth ${:.0f}'.format(worth) == 'I am worth $1000'
 
 
 a = 'hello world'  # Immutable strings
@@ -136,8 +112,8 @@ def mult(i, j):
 
 
 result, exclamation = mult(2, 3)
-print result
-print exclamation
+assert result == 6
+assert exclamation == '!'
 
 
 # Python doesn't have a traditional main method, it just runs the script
@@ -156,98 +132,37 @@ if __name__ == '__main__':
 
 my_string = 'hello world'
 
-# return a copy of the string with its first character capitalized
-# and the rest lowercased
 assert my_string.capitalize() == 'Hello world'
-
-# return centered in a string of length 'width'
 assert my_string.center(20) == '    hello world     '
-
-# return number of non-overlapping occurrences of substring
 assert my_string.count('l') == 3
-
-# return True if string ends with specified suffix, otherwise return False
 assert my_string.endswith('world') is True
-
-# return the lowest index in the string where substring is found
 assert my_string.find('lo') == 3
-
-# return true if all characters in the string are alphanumeric and
-# there is at least one character, false otherwise
-assert my_string.isalnum() is False
-
-# return true if all characters in the string are alphabetic and
-# there is at least one character, false otherwise
-assert my_string.isalpha() is False
-
-# return true if all characters in the string are digits and
-# there is at least one character, false otherwise
-assert my_string.isdigit() is False
-
-# return true if all cased characters [4] in the string are lowercase and
-# there is at least one cased character, false otherwise
-assert my_string.islower() is True
-
-# return true if there are only whitespace characters in the string and
-# there is at least one character, false otherwise
-assert my_string.isspace() is False
-
-# return true if the string is a titlecased string and there is at
-# least one character, false otherwise
-assert my_string.istitle() is False
-
-# return true if all cased characters in the string are uppercase and there
-# is at least one cased character, false otherwise
-assert my_string.isupper() is False
-
-# return the string left justified in a string of a given length
+assert 'My name is {}'.format('Guido') == 'My name is Guido'
+assert 'abc123'.isalnum() is True
+assert 'abc'.isalpha() is True
+assert '123456'.isdigit() is True
+assert 'abc'.islower() is True
+assert '  '.isspace() is True
+assert 'Hello World'.istitle() is True
+assert 'HELLO WORLD'.isupper() is True
+assert ' '.join(['hello', 'world']) == 'hello world'
 assert my_string.ljust(20) == 'hello world         '
-
-# return a copy of the string converted to lowercase
-assert my_string.lower() == 'hello world'
-
-# return a copy of the string with leading characters removed
+assert 'Hello World'.lower() == 'hello world'
 assert my_string.lstrip('eh') == 'llo world'
-
-# return a copy of the string with all occurrences of substring replaced
 assert my_string.replace('l', 'Z') == 'heZZo worZd'
-
-# return the highest index in the string where substring is found
 assert my_string.rfind('o') == 7
-
-# return the string right justified in a string of a given length
 assert my_string.rjust(20) == '         hello world'
-
-# return a copy of the string with trailing characters removed
-assert my_string.rstrip('dlr') == 'hello wo'
-
-# return a list of the words in the string
-# default delimiter = consecutive whitespace
+assert my_string.rstrip('drl') == 'hello wo'
 assert my_string.split() == ['hello', 'world']
 assert 'hello      world'.split() == ['hello', 'world']
-
-# return True if string starts with the prefix, otherwise return False
-# prefix can also be a tuple of prefixes to look for
+assert 'hello<>world<>!'.split('<>') == ['hello', 'world', '!']
 assert my_string.startswith('hel') is True
 assert my_string.startswith(('ab', 'cd', 'hel')) is True
-
-# Return a copy of the string with the leading and trailing characters removed
 assert '   test string   '.strip() == 'test string'
 assert my_string.strip('hled') == 'o wor'
-
-# return a copy of the string with uppercase characters converted to
-# lowercase and vice versa
 assert 'hElLo WoRlD'.swapcase() == 'HeLlO wOrLd'
-
-# Return a titlecased version of the string where words start with an
-# uppercase character and the remaining characters are lowercase
 assert my_string.title() == 'Hello World'
-
-# return a copy of the string converted to uppercase
 assert my_string.upper() == 'HELLO WORLD'
-
-# Return a copy of the string left filled with ASCII '0' digits to
-# make a string of a given length
 assert '2'.zfill(4) == '0002'
 
 
@@ -355,7 +270,7 @@ assert my_tuple.index('b') == 1
 # slicing
 assert my_tuple_2[1:] == my_tuple_3[-2:] == ('b', 'c')
 
-# single value Tuple
+# single value tuple
 p = 'z',
 q = tuple('z')
 assert p == q == ('z',)
@@ -366,15 +281,16 @@ assert p == q == ('z',)
 # -----------------------------------------------------------------------------
 
 my_set = {4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1}
-my_set_2 = {7, 7, 6, 6, 5, 5, 4, 4, 4}
 assert my_set == {1, 2, 3, 4} == {4, 1, 3, 2}
+
+my_set_2 = {7, 7, 6, 6, 5, 5, 4, 4, 4}
 assert my_set_2 == {4, 5, 6, 7} == {6, 5, 7, 4}
 
 # add a value to the set
 my_set.add(5)
 assert my_set == {1, 2, 3, 4, 5}
 
-# return a new set with a shallow copy of 'r', assigned to the value, 't'
+# return a new set with a shallow copy of the set
 copy_of_set = my_set.copy()
 assert copy_of_set == my_set
 
@@ -384,15 +300,32 @@ assert copy_of_set == set([])
 
 # return a new set with elements that are not in the other set(s)
 assert my_set.difference(my_set_2) == {1, 2, 3}
-assert my_set_2.difference(my_set) == {6, 7}
+assert my_set - my_set_2 == {1, 2, 3}
 
+# return a new set with elements common to the set and all others
+assert my_set.intersection(my_set_2) == {4, 5}
+assert my_set & my_set_2 == {4, 5}
 
-# >>>> intersection, union, etc...
+# number of elements in the set
+assert len(my_set) == 5
 
+# test for membership
+assert 2 in my_set
+
+# test for non-membership
+assert 47 not in my_set
 
 # remove a value from the set
 my_set.remove(1)
 assert my_set == {2, 3, 4, 5}
+
+# return a new set with elements in either the set or other but not both
+assert my_set.symmetric_difference(my_set_2) == {2, 3, 6, 7}
+assert my_set ^ my_set_2 == {2, 3, 6, 7}
+
+# return a new set with elements from the set and all others
+assert my_set.union(my_set_2) == {2, 3, 4, 5, 6, 7}
+assert my_set | my_set_2 == {2, 3, 4, 5, 6, 7}
 
 
 # -----------------------------------------------------------------------------
