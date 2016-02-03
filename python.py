@@ -46,7 +46,7 @@ else:
 #while loop
 while a <= 3:
     print a
-    a = a + 1 #no increment operator
+    a += 1 #no ++ increment operator
 
 #for loop. prints 1 2 3
 for i in [1, 2, 3]:
