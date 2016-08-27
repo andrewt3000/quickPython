@@ -51,8 +51,10 @@ a = 'hello world'  # Immutable strings
 b = "single or double quotes can be used for string literals."
 
 # slice operator, [start:stop:step] 
+# slice is used to substring or get ranges for list.
 assert a[0:4] == 'hell'
 assert a[:4] == 'hell'
+#gets even indexes
 assert a[1::2] == 'el ol'
 
 c = 1
