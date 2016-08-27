@@ -50,7 +50,7 @@ assert 'I am worth ${:.0f}'.format(worth) == 'I am worth $1000'
 a = 'hello world'  # Immutable strings
 b = "single or double quotes can be used for string literals."
 
-# slice operator, [start:stop:step]
+# slice operator, [start:stop:step] 
 assert a[0:4] == 'hell'
 assert a[:4] == 'hell'
 assert a[1::2] == 'el ol'
@@ -100,6 +100,9 @@ print '' and 'b'  # print a blank.
 if '' and 'b':
     print 'this will not print'
 
+#not is the negation operator
+if not false
+    print 'this will print'
 
 # -----------------------------------------------------------------------------
 # -- Functions
