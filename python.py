@@ -137,6 +137,7 @@ if __name__ == '__main__':
 
 my_string = 'hello world'
 
+#sub string is accomplished with range operator
 assert my_string.capitalize() == 'Hello world'
 assert my_string.center(20) == '    hello world     '
 assert my_string.count('l') == 3
