@@ -339,7 +339,14 @@ assert my_set | my_set_2 == {2, 3, 4, 5, 6, 7}
 # -----------------------------------------------------------------------------
 
 # Python is object oriented
-# super class is in parenthesis
+class MyClass:
+    #attributes
+    i = 1234
+    
+#Class instantiation
+x = MyClass()
+
+# super class is in parenthesis. allows multiple base classes.
 class FileInfo(UserDict):
     """ doc string documents the class """
 
