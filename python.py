@@ -60,6 +60,7 @@ assert a[1::2] == 'el ol'
 c = 1
 d = 3
 # indentation determines scope for control structures, etc.
+# python supports "and", and "or" keywords for boolean logic. also support short circuiting.  
 if c == 1 and d != 1:
     print 'c is one'
     print 'this is also printed conditionally.'
