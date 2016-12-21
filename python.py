@@ -355,6 +355,7 @@ class FileInfo(UserDict):
         """ function doc string """
         pass
 
+#self is a keyword to reference class variables and methods. similar to "this" in other languages.  
 
 # -----------------------------------------------------------------------------
 # -- Comprehensions
