@@ -45,6 +45,7 @@ worth = 999.56
 
 # Python is strongly typed. Variables have to be cast after being set.
 assert 'I am worth ${:.0f}'.format(worth) == 'I am worth $1000'
+print "worth " + str(worth) #int(), float()
 
 
 a = 'hello world'  # Immutable strings
