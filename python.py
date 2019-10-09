@@ -198,7 +198,8 @@ class FileInfo(UserDict):
 
 #self is a keyword to reference class variables and methods. similar to "this" in other languages.  
 
-#The first argument of every class method, including init, is always a reference to the current instance of the class. By convention, this argument is always named self. 
+# The first argument of every class method, including init, is always a reference to the current instance of the class. 
+# By convention, this argument is always named self. 
 
 # -----------------------------------------------------------------------------
 # -- Dict
