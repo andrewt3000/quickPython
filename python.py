@@ -125,6 +125,7 @@ assert exclamation == '!'
 
 # Python doesn't have a traditional main method, it just runs the script
 # This is the standard way to invoke the main method.
+# It uses "magic" methods.  
 def main():
     print 'main method'
 
@@ -174,6 +175,30 @@ assert my_string.title() == 'Hello World'
 assert my_string.upper() == 'HELLO WORLD'
 assert '2'.zfill(4) == '0002'
 
+# -----------------------------------------------------------------------------
+# -- Classes
+# -----------------------------------------------------------------------------
+
+# Python is object oriented
+class MyClass:
+    #attributes
+    i = 1234
+    
+#Class instantiation
+x = MyClass()
+
+# super class is in parenthesis. allows multiple base classes.
+class FileInfo(UserDict):
+    """ doc string documents the class """
+
+    # __init__ is constructor
+    def __init__(self, fileName=None):
+        """ function doc string """
+        pass
+
+#self is a keyword to reference class variables and methods. similar to "this" in other languages.  
+
+#the first parameter to a class method is the class. 
 
 # -----------------------------------------------------------------------------
 # -- Dict
@@ -337,31 +362,3 @@ assert my_set.union(my_set_2) == {2, 3, 4, 5, 6, 7}
 assert my_set | my_set_2 == {2, 3, 4, 5, 6, 7}
 
 
-# -----------------------------------------------------------------------------
-# -- Classes
-# -----------------------------------------------------------------------------
-
-# Python is object oriented
-class MyClass:
-    #attributes
-    i = 1234
-    
-#Class instantiation
-x = MyClass()
-
-# super class is in parenthesis. allows multiple base classes.
-class FileInfo(UserDict):
-    """ doc string documents the class """
-
-    # __init__ is constructor
-    def __init__(self, fileName=None):
-        """ function doc string """
-        pass
-
-#self is a keyword to reference class variables and methods. similar to "this" in other languages.  
-
-# -----------------------------------------------------------------------------
-# -- Comprehensions
-# -----------------------------------------------------------------------------
-
-# dict, list, set, tuple...
