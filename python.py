@@ -1,7 +1,6 @@
 # Inspired by Learn Lua in 15 minutes http://tylerneylon.com/a/learn-lua/
 
 # -----------------------------------------------------------------------------
-# Python 2 - Documentation: https://docs.python.org/2/
 # Python 3 - Documentation: https://docs.python.org/3/
 # Python PEP8 - Style Guide: https://www.python.org/dev/peps/pep-0008/
 # -----------------------------------------------------------------------------
@@ -191,7 +190,7 @@ x = MyClass()
 class FileInfo(UserDict):
     """ doc string documents the class """
 
-    # __init__ is constructor
+    # __init__ is an initializer called after construction
     def __init__(self, fileName=None):
         """ function doc string """
         pass
